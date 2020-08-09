@@ -1,14 +1,18 @@
 import 'package:device_preview/device_preview.dart';
-import 'package:ecode/authPage/authScreen.dart';
+import 'package:ecode/screens/home/home.dart';
+import 'package:ecode/screens/login/login.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(
-  DevicePreview(
-    enabled: !kReleaseMode,
-    builder: (context) => MyApp(),
-  ),
-);
+//void main() => runApp(
+//  DevicePreview(
+//    enabled: !kReleaseMode,
+//    builder: (context) => MyApp(),
+//  ),
+//);
+
+void main() => runApp(MyApp());
+
 
 
 class MyApp extends StatelessWidget {
@@ -21,7 +25,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: AuthPage(),
+      routes: {
+        "/home" : (context) => HomePage(),
+      },
+      home: LoginPage(),
     );
   }
 }
