@@ -1,6 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:ecode/screens/home/home.dart';
 import 'package:ecode/screens/login/login.dart';
+import 'package:ecode/screens/onboard/onboard.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -27,8 +28,9 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         "/home" : (context) => HomePage(),
+        "/login" : (context) => LoginPage(),
       },
-      home: LoginPage(),
+      home: OnboardingScreen(),
     );
   }
 }
