@@ -5,8 +5,11 @@ import 'package:google_fonts/google_fonts.dart';
 
 class Widgets {
   static TextEditingController studentIdContoller = TextEditingController();
+  static TextEditingController studentIdRegController = TextEditingController();
   static TextEditingController studentPasswordController =
       TextEditingController();
+  static TextEditingController studentPasswordRegController =
+  TextEditingController();
   static TextEditingController studentNICController = TextEditingController();
   static TextEditingController studentConfirmPasswordController =
       TextEditingController();
@@ -15,7 +18,7 @@ class Widgets {
     return Column(
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20),
+          padding: const EdgeInsets.only(left: 5, right: 5),
           child: Container(
             width: double.infinity,
             child: Padding(
@@ -51,6 +54,7 @@ class Widgets {
                     height: 15,
                   ),
                   TextFormField(
+                    obscureText: true,
                     controller: studentPasswordController,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
@@ -161,7 +165,7 @@ class Widgets {
     return Column(
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20),
+          padding: const EdgeInsets.only(left: 5, right: 5),
           child: Container(
             width: double.infinity,
             child: Padding(
@@ -184,7 +188,7 @@ class Widgets {
                     height: 7,
                   ),
                   TextFormField(
-                    controller: studentIdContoller,
+                    controller: studentIdRegController,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: "Student Id",
@@ -209,7 +213,8 @@ class Widgets {
                     height: 8,
                   ),
                   TextFormField(
-                    controller: studentPasswordController,
+                    obscureText: true,
+                    controller: studentPasswordRegController,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: "Password",
@@ -221,6 +226,7 @@ class Widgets {
                     height: 8,
                   ),
                   TextFormField(
+                    obscureText: true,
                     controller: studentConfirmPasswordController,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
