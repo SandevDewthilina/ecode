@@ -140,8 +140,32 @@ class Widgets {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Text('Slide to Register  '),
-                  Icon(Icons.arrow_forward_ios),
-                  Icon(Icons.arrow_forward_ios),
+                  TweenAnimationBuilder(
+                    duration: Duration(milliseconds: 750),
+                    tween: Tween<double>(begin: -40, end: 25),
+                    builder: (_, double value, __) {
+                      return Transform.translate(
+                        offset: Offset(value,0),
+                        child: Icon(
+                          Icons.arrow_forward_ios,
+                          size: 40,
+                        ),
+                      );
+                    },
+                  ),
+                  TweenAnimationBuilder(
+                    duration: Duration(milliseconds: 750),
+                    tween: Tween<double>(begin: -50, end: 7),
+                    builder: (_, double value, __) {
+                      return Transform.translate(
+                        offset: Offset(value,0),
+                        child: Icon(
+                          Icons.arrow_forward_ios,
+                          size: 40,
+                        ),
+                      );
+                    },
+                  ),
                 ],
               ),
               Row(
@@ -251,8 +275,8 @@ class Widgets {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(
-              left: 36.0, right: 36.0, top: 8, bottom: 5),
+          padding:
+              const EdgeInsets.only(left: 36.0, right: 36.0, top: 8, bottom: 5),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [Widgets.buildSignUpBtn()],
@@ -296,32 +320,32 @@ class Widgets {
   static Builder buildSignUpBtn() {
     return Builder(
         builder: (context) => Container(
-          child: Material(
-            color: Colors.transparent,
-            child: InkWell(
-              onTap: () {
-                authentication(context);
-              },
-              child: Padding(
-                padding:
-                const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
-                child: Text("Sign Up",
-                    style: GoogleFonts.poppins(
-                        color: Colors.white, fontSize: 25)),
+              child: Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  onTap: () {
+                    authentication(context);
+                  },
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+                    child: Text("Sign Up",
+                        style: GoogleFonts.poppins(
+                            color: Colors.white, fontSize: 25)),
+                  ),
+                ),
               ),
-            ),
-          ),
-          decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                    color: Color(0xFF6078ea).withOpacity(.9),
-                    offset: Offset(0.0, 8.0),
-                    blurRadius: 8.0)
-              ],
-              gradient: LinearGradient(
-                  colors: [Color(0xFF17ead9), Color(0xFF6078ea)]),
-              borderRadius: BorderRadius.circular(8.0)),
-        ));
+              decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                        color: Color(0xFF6078ea).withOpacity(.9),
+                        offset: Offset(0.0, 8.0),
+                        blurRadius: 8.0)
+                  ],
+                  gradient: LinearGradient(
+                      colors: [Color(0xFF17ead9), Color(0xFF6078ea)]),
+                  borderRadius: BorderRadius.circular(8.0)),
+            ));
   }
 
   static Padding buildContactUs() {
